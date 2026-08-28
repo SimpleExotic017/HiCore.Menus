@@ -1,10 +1,30 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>Library</OutputType>
-    <TargetFramework>net10.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>Library</OutputType>
+		<TargetFramework>net10.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+
+		<!-- NuGet metadata -->
+		<PackageId>HiCore.Menus</PackageId>
+		<Version>1.0.0</Version>
+		<Authors>HellC</Authors>
+		<Description>Easy to implement cli selection menu. Navigate between items using the up and down arrow keys and select an item using ENTER. You can create multiple menus and nest them within each other if you need submenus. Each component is customizable ranging from changing each individual items foregroundcolor to completely overriding the cursor string</Description>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+
+		<!-- Licentie & Readme -->
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+
+		<RepositoryUrl>https://github.com/SimpleExotic017/HiCore.Menus</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageProjectUrl>https://github.com/SimpleExotic017/HiCore.Menus</PackageProjectUrl>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="README.md" Pack="true" PackagePath="\" />
+	</ItemGroup>
 
 </Project>

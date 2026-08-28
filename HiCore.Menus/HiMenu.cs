@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HiCore.Menus
 {
-    internal class HiMenu
+    public class HiMenu
     {
         //CLI color styling options
         public ConsoleColor titleColor = ConsoleColor.Yellow;
