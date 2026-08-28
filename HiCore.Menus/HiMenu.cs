@@ -6,23 +6,38 @@ namespace HiCore.Menus
 {
     internal class HiMenu
     {
+        //CLI color styling options
         public ConsoleColor titleColor = ConsoleColor.Yellow;
-        private ConsoleColor originalColor = Console.ForegroundColor;
         private List<ConsoleColor> optionColors = new List<ConsoleColor>();
+
+
+        //CLI Remaining styling options
         private string cursor = "->";
         private int spacing = 5;
         private string menuTitle = "Quite Exquisite";
+        public string customReturnMessage = $"=================\n ENTER To Return\n=================";
+
+
+        //Original state before menu implementation
         private bool originalcursorvisibility = Console.CursorVisible;
+        private ConsoleColor originalColor = Console.ForegroundColor;
+
+
+        //conditions for looping and requiring input to continue
         public bool returnToMenu = true;
         public bool enterToReturn = true;
-        public string customReturnMessage = $"=================\n ENTER To Return\n=================";
-        private bool exit = false;
+
+
+        //Backbone of this entire class
         Dictionary<string, Action> options = new Dictionary<string, Action>();
+
+
         public HiMenu(string menuTitle)
         {
             this.menuTitle = menuTitle;
             optionColors.Add(ConsoleColor.Yellow);
         }
+        private bool exit = false;
         private void Exit()
         {
             exit = true;
