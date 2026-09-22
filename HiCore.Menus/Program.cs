@@ -20,7 +20,7 @@
             //menu.AddMultipleOptions(testDictionary);
             menu.SetSpacing(6);
             menu.titleColor = ConsoleColor.Cyan;
-            menu.SetCursor(">UwU>");
+            //menu.SetCursor(">UwU>");
             //menu.SetOptionColorByIndex(3, ConsoleColor.Red);
             //menu.SetOptionColorByIndex(4, ConsoleColor.Red);
             menu.SetOptionColors(new List<ConsoleColor>() { ConsoleColor.Green, ConsoleColor.Red,ConsoleColor.DarkRed, ConsoleColor.DarkBlue, ConsoleColor.White,ConsoleColor.Cyan,ConsoleColor.DarkYellow });

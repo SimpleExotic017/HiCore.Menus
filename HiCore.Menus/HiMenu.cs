@@ -124,6 +124,16 @@ namespace HiCore.Menus
                     cursorpositionInOptions++;
                     MoveCursor(+2, cursorpositionInOptions);
                 }
+                if (Console.CursorLeft >= spacing + cursor.Length)
+                {
+                    Console.CursorLeft = Console.CursorLeft - 1;
+                    Console.Write(" ");
+                    Console.CursorLeft = Console.CursorLeft - 1;
+                }
+                if (Console.CursorLeft < spacing + cursor.Length - 1)
+                {
+                    MoveCursor(0, cursorpositionInOptions);
+                }
             } while (pressedKey != ConsoleKey.Enter);
             Console.CursorVisible = originalcursorvisibility;
             Console.Clear();
@@ -132,7 +142,7 @@ namespace HiCore.Menus
         }
         private void MoveCursor(int verticalOffset, int cursorpositionInOptions)
         {
-            Console.CursorLeft = Console.CursorLeft - cursor.Length;
+            Console.CursorLeft = spacing - 1;
             Console.Write("".PadLeft(cursor.Length));
             Console.SetCursorPosition(spacing - 1, Console.CursorTop + verticalOffset);
             //Console.ForegroundColor = cursorColor;
