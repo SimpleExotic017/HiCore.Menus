@@ -35,7 +35,7 @@ namespace HiCore.Menus
         public HiMenu(string menuTitle)
         {
             this.menuTitle = menuTitle;
-            optionColors.Add(ConsoleColor.Yellow);
+            optionColors.Add(ConsoleColor.White);
         }
         private bool exit = false;
         private void Exit()
@@ -77,11 +77,30 @@ namespace HiCore.Menus
                 optionColors[i] = colorList[i];
             }
         }
+        public void SetOptionColors(ConsoleColor color)
+        {
+            for (int i = 0; i < optionColors.Count; i++)
+            {
+                optionColors[i] = color;
+            }
+        }
 
-        public void SetOptionColorByIndex(int index, ConsoleColor changecolor)
+        public void SetOptionColorByIndex(int index, ConsoleColor changeColor)
         {
             ValidateOptionColorList();
-            optionColors[index] = changecolor;
+            optionColors[index] = changeColor;
+        }
+        public void SetOptionColorByName(string name, ConsoleColor changeColor)
+        {
+            int index = 0;
+            foreach (var option in options)
+            {
+                if (option.Key == name)
+                {
+                    optionColors[index] = changeColor;
+                }
+                index++;
+            }
         }
         public void Show()
         {
